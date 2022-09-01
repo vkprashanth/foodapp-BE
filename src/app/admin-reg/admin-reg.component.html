@@ -1,0 +1,57 @@
+<div class="container">
+    <h3>Admin Registration</h3>
+    <form #reg="ngForm" (ngSubmit)="onreg(reg)">
+      <div>
+        <div class="form-group">
+            <input 
+              type="text" 
+              class="form-control" 
+              id="name" 
+              placeholder="Enter Name"
+              name="name"
+              #name="ngModel"
+              required
+              [(ngModel)]="admin.name"
+              >
+            </div>
+        <div class="form-group">
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              placeholder="Enter Email"
+              name="email"
+              #email="ngModel"
+              required
+              [(ngModel)]="admin.email"
+              >
+            </div>
+            <div class="form-group">
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password" 
+                placeholder="Enter Password"
+                name="password"
+                #password="ngModel"
+                required
+                [(ngModel)]="admin.password"
+                >
+              </div>
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="role" 
+                  placeholder="Enter Role"
+                  name="role"
+                  #role="ngModel"
+                  required
+                  [(ngModel)]="admin.role"
+                  >
+                </div>
+    
+        <button type="submit" class="btn btn-primary" >Register</button>
+      <form></form>
+    </div>
+    

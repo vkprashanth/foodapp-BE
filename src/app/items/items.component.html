@@ -1,0 +1,32 @@
+<div>
+  <button class="btn btn-secondary" type="button" [routerLink]="['/additem']" [disabled]="loginstaffrole!=role" >Add Item</button>
+</div>
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Order ID</th>
+        <th scope="col">Staff ID</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of result.t">
+        <td>{{r.id}}</td>
+        <td>{{r.name}}</td>
+        <td>{{r.type}}</td>
+        <td>{{r.quantity}}</td>
+        <td>{{r.price}}</td>
+        <td>{{r.orders.id}}</td>
+        <td>{{r.orders.staff.id}}</td>
+        <td><button type="button" class="btn btn-primary" [routerLink]="['/updateitems/',r.id]" [disabled]="loginstaffID!=r.orders.staff.id">Update</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="delete(r.id)" [disabled]="loginstaffID!=r.orders.staff.id">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
