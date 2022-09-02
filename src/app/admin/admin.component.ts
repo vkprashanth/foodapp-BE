@@ -25,7 +25,7 @@ export class AdminComponent implements OnInit {
   onlogin(form:NgForm){
     this.admin1.loginuser(this.admin).subscribe((res)=>{
     this.result=res
-    this.registeredRole=this.result.role
+    this.result.reqisteredRole=this.result.role
     this.loginadminID=this.result.id
     console.log(this.loginadminID);
     localStorage.setItem('loginadminID',this.loginadminID)
